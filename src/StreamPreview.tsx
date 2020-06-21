@@ -18,6 +18,7 @@ export function StreamPreview(props: {
         videoRef.current.srcObject = call.stream ?? null;
       }
     };
+  // eslint-disable-next-line
   }, []);
 
   return (
