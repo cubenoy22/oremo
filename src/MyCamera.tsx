@@ -32,6 +32,7 @@ const updateStream = (async (
     stream.getAudioTracks().forEach(t => { t.enabled = usesMicrophone; });
     if (videoRef.current) {
       videoRef.current.srcObject = stream;
+      videoRef.current.volume = 0;
     }
   } catch (e) {
     console.error(e);
@@ -161,6 +162,7 @@ export const MyCamera = (props: {
         ref={videoRef}
         onLoadedMetadata={e => { (e.target as HTMLVideoElement).play(); }}
         playsInline
+        autoPlay
       />
     </div>
   );
