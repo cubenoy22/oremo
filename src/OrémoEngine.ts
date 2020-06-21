@@ -16,12 +16,13 @@ export class OrémoEngine {
   private _myStream?: MediaStream;
   private _calls: OrémoCall[] = [];
 
-  constructor(host: string, path: string, port: number) {
+  constructor(host: string, path: string, port: number, key: string) {
     this._peer = new Peer({
       host: host,
       path: path,
       port: port,
       secure: true,
+      key: key,
     });
 
     this._peer.on('open', (id: string) => {
